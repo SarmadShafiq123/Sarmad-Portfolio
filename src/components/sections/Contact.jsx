@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+const WEB3FORMS_ACCESS_KEY = '5bf045a0-5a28-4942-a461-bb4b5a5a677d'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
