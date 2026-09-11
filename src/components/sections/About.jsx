@@ -116,7 +116,7 @@ export default function About() {
               margin: '0 auto',
             }}
           >
-            I build MERN-stack web apps and Electron desktop tools — everything from full e-commerce platforms to Windows-packaged scrapers and business automation utilities. I use AI-assisted tooling like <strong style={{ color: '#00D9C0' }}>Kiro</strong>, <strong style={{ color: '#00D9C0' }}>Claude</strong> and <strong style={{ color: '#00D9C0' }}> Antigravity</strong>  to move fast while keeping code maintainable and production-ready.
+            I build MERN-stack web apps and Electron desktop tools - everything from full e-commerce platforms to Windows-packaged scrapers and business automation utilities. I use AI-assisted tooling like <strong style={{ color: '#00D9C0' }}>Kiro</strong>, <strong style={{ color: '#00D9C0' }}>Claude</strong> and <strong style={{ color: '#00D9C0' }}> Antigravity</strong>  to move fast while keeping code maintainable and production-ready.
           </p>
 
           <div

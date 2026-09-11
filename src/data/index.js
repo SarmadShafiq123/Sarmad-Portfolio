@@ -15,7 +15,7 @@ export const PROJECTS = [
     category: 'Desktop Application · Electron',
     title: 'MC Carrier Extractor',
     description:
-      'A desktop application (Electron + React) that scrapes FMCSA SAFER carrier data across MC number ranges to generate qualified dispatch leads — worker-pool concurrency, adaptive backoff, CSV export, and a custom "Dispatch Console" design system. Packaged as a protected commercial Windows tool.',
+      'A desktop application (Electron + React) that scrapes FMCSA SAFER carrier data across MC number ranges to generate qualified dispatch leads - worker-pool concurrency, adaptive backoff, CSV export, and a custom "Dispatch Console" design system. Packaged as a protected commercial Windows tool.',
     tags: ['Electron', 'React', 'Node.js', 'Worker Threads', 'Web Scraping', 'CSV', 'electron-builder'],
     liveUrl: null,
     backendUrl: null,
@@ -29,7 +29,7 @@ export const PROJECTS = [
     category: 'E-Commerce Platform',
     title: 'Luxe Bags',
     description:
-      'A full-stack MERN e-commerce application with Google OAuth login, JWT authentication, Cloudinary media management, and MongoDB Atlas — separate client/server architecture deployed independently.',
+      'A full-stack MERN e-commerce application with Google OAuth login, JWT authentication, Cloudinary media management, and MongoDB Atlas - separate client/server architecture deployed independently.',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Cloudinary', 'Google OAuth'],
     liveUrl: 'https://e-commerce-full-stack-lime.vercel.app/',
     backendUrl: 'https://e-commerce-full-stack-production-3182.up.railway.app',
@@ -56,7 +56,7 @@ export const PROJECTS = [
     category: 'Frontend / 3D Web',
     title: 'This Portfolio',
     description:
-      'This site — Three.js particle hero, GSAP-driven scroll motion, Tailwind CSS theming, and serverless contact form. Built and deployed with Vercel.',
+      'This site - Three.js particle hero, GSAP-driven scroll motion, Tailwind CSS theming, and serverless contact form. Built and deployed with Vercel.',
     tags: ['React', 'Three.js', 'GSAP', 'Tailwind CSS', 'Vite', 'Vercel'],
     liveUrl: null,
     backendUrl: null,
