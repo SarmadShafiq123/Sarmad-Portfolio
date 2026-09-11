@@ -80,7 +80,6 @@ export default function Projects() {
           margin: '0 auto',
         }}
       >
-        {/* Title */}
         <h2
           ref={titleRef}
           style={{
@@ -97,7 +96,6 @@ export default function Projects() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </h2>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           style={{
@@ -113,7 +111,6 @@ export default function Projects() {
           What I've Built
         </p>
 
-        {/* Project Grid */}
         <div
           ref={gridRef}
           style={{
@@ -149,7 +146,6 @@ export default function Projects() {
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
-              {/* Top badges */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '0.5rem', flexWrap: 'wrap' }}>
                 <span
                   style={{
@@ -181,7 +177,6 @@ export default function Projects() {
                 )}
               </div>
 
-              {/* Category */}
               <p
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -195,7 +190,6 @@ export default function Projects() {
                 {project.category}
               </p>
 
-              {/* Title */}
               <h3
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
@@ -209,7 +203,6 @@ export default function Projects() {
                 {project.title}
               </h3>
 
-              {/* Description */}
               <p
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -222,7 +215,6 @@ export default function Projects() {
                 {project.description}
               </p>
 
-              {/* Tech tags */}
               <div
                 style={{
                   display: 'flex',
@@ -263,7 +255,6 @@ export default function Projects() {
                 )}
               </div>
 
-              {/* Links */}
               <div style={{ display: 'flex', gap: '0.75rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
                 {project.liveUrl && (
                   <a

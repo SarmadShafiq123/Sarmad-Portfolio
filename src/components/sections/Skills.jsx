@@ -111,7 +111,6 @@ export default function Skills() {
           margin: '0 auto',
         }}
       >
-        {/* Title */}
         <h2
           ref={titleRef}
           style={{
@@ -128,7 +127,6 @@ export default function Skills() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </h2>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           style={{
@@ -144,7 +142,6 @@ export default function Skills() {
           Core Expertise
         </p>
 
-        {/* Filter Tabs */}
         <div
           ref={tabsRef}
           style={{
@@ -194,7 +191,6 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Skills Grid */}
         <div
           ref={skillsRef}
           style={{
@@ -235,7 +231,6 @@ export default function Skills() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              {/* Icon dot */}
               <span
                 style={{
                   display: 'inline-block',
@@ -251,7 +246,6 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Count indicator */}
         <p
           style={{
             fontFamily: "'JetBrains Mono', monospace",

@@ -8,9 +8,11 @@ export default function Hero() {
   const textRef   = useRef(null)
   const ctaRef    = useRef(null)
 
-  // ── Three.js particle system ────────────────────────────────────────────
   useEffect(() => {
     if (!canvasRef.current) return
+
+    let isActive = true
+    let frameId = null
 
     const canvas = canvasRef.current
     const scene  = new THREE.Scene()
@@ -21,23 +23,20 @@ export default function Hero() {
     renderer.setSize(window.innerWidth, window.innerHeight)
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-    // ── Particle geometry ──
     const particleCount = 3000
     const positions     = new Float32Array(particleCount * 3)
     const colors        = new Float32Array(particleCount * 3)
 
-    const color1 = new THREE.Color(0x00D9C0) // accent teal
-    const color2 = new THREE.Color(0x1E293B) // surface gray
-    const color3 = new THREE.Color(0x0F172A) // bg surface
+    const color1 = new THREE.Color(0x00D9C0)
+    const color2 = new THREE.Color(0x1E293B)
+    const color3 = new THREE.Color(0x0F172A)
 
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3
-      // Spread particles in a sphere
       positions[i3]     = (Math.random() - 0.5) * 12
       positions[i3 + 1] = (Math.random() - 0.5) * 12
       positions[i3 + 2] = (Math.random() - 0.5) * 8
 
-      // Mix colors randomly
       const mixColor = Math.random() < 0.1 ? color1 : Math.random() < 0.6 ? color2 : color3
       colors[i3]     = mixColor.r
       colors[i3 + 1] = mixColor.g
@@ -60,24 +59,22 @@ export default function Hero() {
     const particles = new THREE.Points(geometry, material)
     scene.add(particles)
 
-    // ── Mouse interaction ──
     const onMouseMove = (e) => {
       mouseRef.current.x = (e.clientX / window.innerWidth)  * 2 - 1
       mouseRef.current.y = -(e.clientY / window.innerHeight) * 2 + 1
     }
     window.addEventListener('mousemove', onMouseMove)
 
-    // ── Animation loop ──
-    const clock = new THREE.Clock()
+    const startTime = performance.now()
     const animate = () => {
-      requestAnimationFrame(animate)
-      const elapsed = clock.getElapsedTime()
+      if (!isActive) return
 
-      // Rotate particles slowly
+      frameId = requestAnimationFrame(animate)
+      const elapsed = (performance.now() - startTime) / 1000
+
       particles.rotation.x = elapsed * 0.05
       particles.rotation.y = elapsed * 0.08
 
-      // Mouse parallax
       particles.rotation.x += mouseRef.current.y * 0.02
       particles.rotation.y += mouseRef.current.x * 0.02
 
@@ -85,7 +82,6 @@ export default function Hero() {
     }
     animate()
 
-    // ── Resize handler ──
     const onResize = () => {
       camera.aspect = window.innerWidth / window.innerHeight
       camera.updateProjectionMatrix()
@@ -94,6 +90,10 @@ export default function Hero() {
     window.addEventListener('resize', onResize)
 
     return () => {
+      isActive = false
+      if (frameId !== null) {
+        cancelAnimationFrame(frameId)
+      }
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('resize', onResize)
       geometry.dispose()
@@ -102,7 +102,6 @@ export default function Hero() {
     }
   }, [])
 
-  // ── GSAP text entrance animation ────────────────────────────────────────
   useEffect(() => {
     const tl = gsap.timeline({ delay: 0.5 })
     tl.fromTo(
@@ -131,7 +130,6 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Three.js Canvas */}
       <canvas
         ref={canvasRef}
         style={{
@@ -141,7 +139,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Hero Content */}
       <div
         style={{
           position: 'relative',
@@ -152,7 +149,6 @@ export default function Hero() {
         }}
       >
         <div ref={textRef}>
-          {/* Name */}
           <h1
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
@@ -167,7 +163,6 @@ export default function Hero() {
             Sarmad Shafiq
           </h1>
 
-          {/* Role */}
           <h2
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
@@ -182,7 +177,6 @@ export default function Hero() {
             Full-Stack MERN Developer & Desktop App Builder
           </h2>
 
-          {/* Tagline */}
           <p
             style={{
               fontFamily: "'Inter', sans-serif",
@@ -191,14 +185,12 @@ export default function Hero() {
               color: '#94A3B8',
               marginBottom: '2.5rem',
               letterSpacing: '0.05em',
-              textTransform: 'uppercase',
             }}
           >
-            Building. Shipping. Iterating.
+            Final-year BSCS · Gujranwala, Pakistan
           </p>
         </div>
 
-        {/* CTA Buttons */}
         <div
           ref={ctaRef}
           style={{
@@ -278,7 +270,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div
         style={{
           position: 'absolute',

@@ -3,7 +3,7 @@ export default function Footer() {
 
   const socialLinks = [
     { label: 'LinkedIn', url: 'https://linkedin.com/in/sarmad-shafiq', icon: 'in' },
-    { label: 'GitHub', url: 'https://github.com/sarmadshafiq', icon: 'gh' },
+    { label: 'GitHub', url: 'https://github.com/SarmadShafiq123', icon: 'gh' },
   ]
 
   return (
@@ -24,7 +24,6 @@ export default function Footer() {
           alignItems: 'center',
         }}
       >
-        {/* Logo / Name */}
         <div
           style={{
             fontFamily: "'Space Grotesk', sans-serif",
@@ -38,7 +37,6 @@ export default function Footer() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </div>
 
-        {/* Tagline */}
         <p
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -49,11 +47,9 @@ export default function Footer() {
             lineHeight: 1.6,
           }}
         >
-          Full-Stack MERN Developer building real, deployed products with clean architecture and
-          AI-assisted tooling.
+          Full-Stack Developer · Gujranwala, Pakistan
         </p>
 
-        {/* Social Links */}
         <div
           style={{
             display: 'flex',
@@ -102,7 +98,6 @@ export default function Footer() {
             </a>
           ))}
 
-          {/* Email */}
           <a
             href="mailto:sarmad@example.com"
             aria-label="Email"
@@ -138,7 +133,6 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Divider */}
         <div
           style={{
             width: '100%',
@@ -147,7 +141,6 @@ export default function Footer() {
           }}
         />
 
-        {/* Copyright */}
         <div
           style={{
             display: 'flex',

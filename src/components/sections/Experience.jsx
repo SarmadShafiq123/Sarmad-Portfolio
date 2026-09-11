@@ -13,7 +13,6 @@ export default function Experience() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title reveal
       gsap.fromTo(
         titleRef.current,
         { y: 50, opacity: 0 },
@@ -29,7 +28,6 @@ export default function Experience() {
         }
       )
 
-      // Subtitle
       gsap.fromTo(
         subtitleRef.current,
         { y: 30, opacity: 0 },
@@ -45,7 +43,6 @@ export default function Experience() {
         }
       )
 
-      // Cards stagger
       gsap.fromTo(
         cardsRef.current.children,
         { x: -60, opacity: 0 },
@@ -82,7 +79,6 @@ export default function Experience() {
           margin: '0 auto',
         }}
       >
-        {/* Section Title */}
         <h2
           ref={titleRef}
           style={{
@@ -99,7 +95,6 @@ export default function Experience() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </h2>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           style={{
@@ -115,7 +110,6 @@ export default function Experience() {
           Professional Journey
         </p>
 
-        {/* Timeline Cards */}
         <div
           ref={cardsRef}
           style={{
@@ -147,7 +141,6 @@ export default function Experience() {
                 e.currentTarget.style.transform = 'translateY(0)'
               }}
             >
-              {/* Index badge */}
               <div
                 style={{
                   position: 'absolute',
@@ -166,7 +159,6 @@ export default function Experience() {
                 {exp.id}
               </div>
 
-              {/* Company */}
               <h3
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
@@ -180,7 +172,6 @@ export default function Experience() {
                 {exp.company}
               </h3>
 
-              {/* Role */}
               <h4
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -193,7 +184,6 @@ export default function Experience() {
                 {exp.role}
               </h4>
 
-              {/* Period */}
               <p
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
@@ -207,7 +197,6 @@ export default function Experience() {
                 {exp.period}
               </p>
 
-              {/* Bullets */}
               <ul
                 style={{
                   listStyle: 'none',

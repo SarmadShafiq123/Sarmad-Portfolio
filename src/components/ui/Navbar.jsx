@@ -8,7 +8,6 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen]       = useState(false)
   const navRef                        = useRef(null)
 
-  // ── Entrance animation ──────────────────────────────────────────────────
   useEffect(() => {
     gsap.fromTo(
       navRef.current,
@@ -17,7 +16,6 @@ export default function Navbar() {
     )
   }, [])
 
-  // ── Scroll: backdrop blur + active section tracking ─────────────────────
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 40)
@@ -35,7 +33,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // ── Smooth-scroll click ─────────────────────────────────────────────────
   const handleClick = (e, href) => {
     e.preventDefault()
     setMenuOpen(false)
@@ -64,7 +61,6 @@ export default function Navbar() {
       <nav style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1.5rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
 
-          {/* ── Logo ── */}
           <a
             href="#home"
             onClick={(e) => handleClick(e, '#home')}
@@ -80,7 +76,6 @@ export default function Navbar() {
             <span style={{ color: '#00D9C0' }}>S</span>armad<span style={{ color: '#00D9C0' }}>.</span>
           </a>
 
-          {/* ── Desktop links ── */}
           <ul
             style={{
               display: 'flex',
@@ -119,7 +114,6 @@ export default function Navbar() {
             })}
           </ul>
 
-          {/* ── Mobile hamburger ── */}
           <button
             className="mobile-menu-btn"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -155,7 +149,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* ── Mobile dropdown ── */}
         {menuOpen && (
           <div
             style={{

@@ -5,7 +5,6 @@ import { PROFILES } from '../../data/index.js'
 
 gsap.registerPlugin(ScrollTrigger)
 
-// Simple SVG icons
 const Icons = {
   linkedin: (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -96,7 +95,6 @@ export default function Profiles() {
           margin: '0 auto',
         }}
       >
-        {/* Title */}
         <h2
           ref={titleRef}
           style={{
@@ -113,7 +111,6 @@ export default function Profiles() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </h2>
 
-        {/* Subtitle */}
         <p
           ref={subtitleRef}
           style={{
@@ -129,7 +126,6 @@ export default function Profiles() {
           Dev Network
         </p>
 
-        {/* Profile Cards */}
         <div
           ref={cardsRef}
           style={{
@@ -171,7 +167,6 @@ export default function Profiles() {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              {/* Icon */}
               <div
                 style={{
                   width: '60px',
@@ -188,7 +183,6 @@ export default function Profiles() {
                 {Icons[profile.icon]}
               </div>
 
-              {/* Label */}
               <h3
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
@@ -201,7 +195,6 @@ export default function Profiles() {
                 {profile.label}
               </h3>
 
-              {/* Handle */}
               <p
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
@@ -213,7 +206,6 @@ export default function Profiles() {
                 {profile.handle}
               </p>
 
-              {/* Description */}
               <p
                 style={{
                   fontFamily: "'Inter', sans-serif",
@@ -225,7 +217,6 @@ export default function Profiles() {
                 {profile.description}
               </p>
 
-              {/* Arrow indicator */}
               <div
                 style={{
                   marginTop: 'auto',
@@ -247,7 +238,6 @@ export default function Profiles() {
           ))}
         </div>
 
-        {/* Footer note */}
         <p
           style={{
             fontFamily: "'Inter', sans-serif",
@@ -258,7 +248,7 @@ export default function Profiles() {
             fontStyle: 'italic',
           }}
         >
-          Connect and collaborate — explore my work across these platforms.
+          Find me across these platforms.
         </p>
       </div>
     </section>

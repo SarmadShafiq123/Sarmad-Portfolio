@@ -1,4 +1,3 @@
-// ─── Navigation ────────────────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: 'Home',       href: '#home' },
   { label: 'About',      href: '#about' },
@@ -9,7 +8,6 @@ export const NAV_LINKS = [
   { label: 'Contact',    href: '#contact' },
 ]
 
-// ─── Projects ──────────────────────────────────────────────────────────────
 export const PROJECTS = [
   {
     id: 1,
@@ -60,14 +58,13 @@ export const PROJECTS = [
     description:
       'This site — Three.js particle hero, GSAP-driven scroll motion, Tailwind CSS theming, and serverless contact form. Built and deployed with Vercel.',
     tags: ['React', 'Three.js', 'GSAP', 'Tailwind CSS', 'Vite', 'Vercel'],
-    liveUrl: null, // Will be added after deployment
+    liveUrl: null,
     backendUrl: null,
     githubUrl: 'https://github.com/SarmadShafiq123/Sarmad-Portfolio',
     isPrivate: false,
   },
 ]
 
-// ─── Skills ────────────────────────────────────────────────────────────────
 export const SKILLS = [
   { name: 'C++',              category: 'Languages' },
   { name: 'JavaScript',       category: 'Languages' },
@@ -92,13 +89,12 @@ export const SKILLS = [
 
 export const SKILL_CATEGORIES = ['All', 'Languages', 'Web', 'Desktop', 'Databases', 'Tools']
 
-// ─── Profiles ──────────────────────────────────────────────────────────────
 export const PROFILES = [
   {
     id: 'linkedin',
     label: 'LinkedIn',
     handle: 'sarmad-shafiq',
-    url: 'https://linkedin.com/in/sarmad-shafiq', // Update with your actual URL
+    url: 'https://linkedin.com/in/sarmad-shafiq',
     description: 'Professional network, work history & endorsements.',
     icon: 'linkedin',
   },
@@ -112,7 +108,6 @@ export const PROFILES = [
   },
 ]
 
-// ─── Experience ────────────────────────────────────────────────────────────
 export const EXPERIENCE = [
   {
     id: '01',

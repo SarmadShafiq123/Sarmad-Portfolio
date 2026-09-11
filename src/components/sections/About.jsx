@@ -11,7 +11,6 @@ export default function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title reveal
       gsap.fromTo(
         titleRef.current,
         { y: 50, opacity: 0 },
@@ -27,7 +26,6 @@ export default function About() {
         }
       )
 
-      // Content paragraphs stagger
       gsap.fromTo(
         contentRef.current.children,
         { y: 40, opacity: 0 },
@@ -67,7 +65,6 @@ export default function About() {
           width: '100%',
         }}
       >
-        {/* Section Title */}
         <h2
           ref={titleRef}
           style={{
@@ -84,7 +81,6 @@ export default function About() {
           <span style={{ color: '#00D9C0' }}>.</span>
         </h2>
 
-        {/* Content */}
         <div
           ref={contentRef}
           style={{
@@ -120,13 +116,9 @@ export default function About() {
               margin: '0 auto',
             }}
           >
-            I build real, deployed products — not tutorials — from web platforms to standalone desktop tools with local data processing and packaging (.exe builds). I care about <strong style={{ color: '#E2E8F0' }}>clean architecture</strong>,{' '}
-            <strong style={{ color: '#E2E8F0' }}>shipping fast</strong>, and iterating with{' '}
-            <strong style={{ color: '#00D9C0' }}>AI-assisted tooling</strong> (Kiro, Claude, Antigravity)
-            without losing code quality control.
+            I build MERN-stack web apps and Electron desktop tools — everything from full e-commerce platforms to Windows-packaged scrapers and business automation utilities. I use AI-assisted tooling like <strong style={{ color: '#00D9C0' }}>Kiro</strong>, <strong style={{ color: '#00D9C0' }}>Claude</strong> and <strong style={{ color: '#00D9C0' }}> Antigravity</strong>  to move fast while keeping code maintainable and production-ready.
           </p>
 
-          {/* Accent bar */}
           <div
             style={{
               width: '80px',

@@ -4,6 +4,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
+const WEB3FORMS_ACCESS_KEY = 'YOUR_WEB3FORMS_ACCESS_KEY'
+
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus]       = useState({ type: '', message: '' })
@@ -59,7 +61,6 @@ export default function Contact() {
     setLoading(true)
     setStatus({ type: '', message: '' })
 
-    // Client-side validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
       setStatus({ type: 'error', message: 'All fields are required.' })
       setLoading(false)
@@ -74,19 +75,25 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Portfolio Contact: ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
       })
 
       const data = await response.json()
 
-      if (response.ok) {
+      if (data.success) {
         setStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' })
         setFormData({ name: '', email: '', message: '' })
       } else {
-        setStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' })
+        setStatus({ type: 'error', message: data.message || 'Something went wrong. Please try again.' })
       }
     } catch (error) {
       setStatus({ type: 'error', message: 'Network error. Please check your connection and try again.' })
@@ -111,7 +118,6 @@ export default function Contact() {
           margin: '0 auto',
         }}
       >
-        {/* Title */}
         <h2
           ref={titleRef}
           style={{
@@ -141,7 +147,6 @@ export default function Contact() {
           Have a project in mind or just want to connect? Drop me a message and I'll get back to you as soon as possible.
         </p>
 
-        {/* Form */}
         <form
           ref={formRef}
           onSubmit={handleSubmit}
@@ -152,7 +157,6 @@ export default function Contact() {
             padding: '2.5rem',
           }}
         >
-          {/* Name */}
           <div style={{ marginBottom: '1.5rem' }}>
             <label
               htmlFor="name"
@@ -198,7 +202,6 @@ export default function Contact() {
             />
           </div>
 
-          {/* Email */}
           <div style={{ marginBottom: '1.5rem' }}>
             <label
               htmlFor="email"
@@ -244,7 +247,6 @@ export default function Contact() {
             />
           </div>
 
-          {/* Message */}
           <div style={{ marginBottom: '1.5rem' }}>
             <label
               htmlFor="message"
@@ -291,7 +293,6 @@ export default function Contact() {
             />
           </div>
 
-          {/* Status Message */}
           {status.message && (
             <div
               style={{
@@ -309,7 +310,6 @@ export default function Contact() {
             </div>
           )}
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={loading}
