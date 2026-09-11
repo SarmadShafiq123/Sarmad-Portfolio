@@ -89,21 +89,26 @@ export default function About() {
             gap: '1.5rem',
           }}
         >
-          <p
-            style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: 'clamp(1rem, 2vw, 1.15rem)',
-              lineHeight: 1.8,
-              color: '#94A3B8',
-              textAlign: 'center',
-              maxWidth: '800px',
-              margin: '0 auto',
-            }}
-          >
-            I'm a final-semester <strong style={{ color: '#E2E8F0' }}>BSCS student</strong> at the{' '}
-            <strong style={{ color: '#E2E8F0' }}>University of Central Punjab</strong> (graduating August 2026)
-            and a self-employed developer based in <strong style={{ color: '#E2E8F0' }}>Gujranwala, Pakistan</strong>, working across both full-stack web (MERN) and native desktop applications (Electron + React).
-          </p>
+       <p
+  style={{
+    fontFamily: "'Inter', sans-serif",
+    fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+    lineHeight: 1.8,
+    color: '#94A3B8',
+    textAlign: 'center',
+    maxWidth: '800px',
+    margin: '0 auto',
+  }}
+>
+  I'm a Full Stack Developer and a recent graduate of{' '}
+  <strong style={{ color: '#E2E8F0' }}>
+    the University of Central Punjab
+  </strong>{' '}
+  (August 2026), based in{' '}
+  <strong style={{ color: '#E2E8F0' }}>Gujranwala, Pakistan</strong>.
+  I work across full-stack web development using the MERN stack and
+  native desktop application development with Electron and React.
+</p>
 
           <p
             style={{

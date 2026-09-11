@@ -3,7 +3,7 @@ export default function Footer() {
 
   const socialLinks = [
     { label: 'LinkedIn', url: 'https://linkedin.com/in/sarmad-shafiq', icon: 'in' },
-    { label: 'GitHub', url: 'https://github.com/SarmadShafiq123', icon: 'gh' },
+    { label: 'GitHub', url: 'https://github.com/SarmadShafiq123/', icon: 'gh' },
   ]
 
   return (
@@ -99,7 +99,7 @@ export default function Footer() {
           ))}
 
           <a
-            href="mailto:sarmad@example.com"
+            href="mrsarmadshafiq@gmail.com"
             aria-label="Email"
             style={{
               display: 'flex',
